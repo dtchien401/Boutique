@@ -74,9 +74,9 @@
                 <p class="text-sm text-slate-500 mt-1">Dịch vụ 1-on-1 VIP</p>
             </div>
             <div class="stat-card">
-                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Khách / PT tối ưu</p>
-                <div class="text-2xl font-black text-slate-800">10 Khách</div>
-                <p class="text-sm text-slate-500 mt-1">12 buổi / khách / tháng</p>
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Tổng vốn đầu tư</p>
+                <div class="text-2xl font-black text-orange-600">~2.8 - 3.5 Tỷ</div>
+                <p class="text-sm text-slate-500 mt-1">Ước tính cho 300m2</p>
             </div>
             <div class="stat-card">
                 <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Tổng Chi phí / Tháng</p>
@@ -97,6 +97,9 @@
             </button>
             <button onclick="switchTab('expense')" id="btn-expense" class="tab-btn px-8 py-4 font-bold text-sm uppercase tracking-wider flex items-center">
                 <i class="fa-solid fa-file-invoice-dollar mr-2"></i> Chi phí vận hành
+            </button>
+            <button onclick="switchTab('investment')" id="btn-investment" class="tab-btn px-8 py-4 font-bold text-sm uppercase tracking-wider flex items-center">
+                <i class="fa-solid fa-vault mr-2"></i> Vốn đầu tư ban đầu
             </button>
         </div>
 
@@ -167,25 +170,64 @@
                         <td class="px-8 py-6 font-bold">Mặt bằng (300m²)</td>
                         <td class="px-8 py-6 text-center font-semibold text-blue-600">6.2%</td>
                         <td class="px-8 py-6 text-right font-bold">300.000.000</td>
-                        <td class="px-8 py-6 text-sm text-slate-500">Ước tính 1tr/m² cho vị trí đắc địa.</td>
+                        <td class="px-8 py-6 text-sm text-slate-500">Vị trí cao cấp, đảm bảo sang trọng.</td>
                     </tr>
                     <tr class="hover:bg-slate-50/50 transition-colors">
                         <td class="px-8 py-6 font-bold">Marketing & Branding</td>
                         <td class="px-8 py-6 text-center font-semibold text-blue-600">8%</td>
                         <td class="px-8 py-6 text-right font-bold">384.000.000</td>
-                        <td class="px-8 py-6 text-sm text-slate-500">Ads, Content, KOLs và sự kiện khách hàng.</td>
+                        <td class="px-8 py-6 text-sm text-slate-500">Ads tập trung khách thượng lưu xung quanh.</td>
                     </tr>
                     <tr class="hover:bg-slate-50/50 transition-colors">
-                        <td class="px-8 py-6 font-bold">Lương QL, Sales & Lễ tân</td>
-                        <td class="px-8 py-6 text-center font-semibold text-blue-600">10%</td>
-                        <td class="px-8 py-6 text-right font-bold">480.000.000</td>
-                        <td class="px-8 py-6 text-sm text-slate-500">Đội ngũ hỗ trợ vận hành 5 sao.</td>
+                        <td class="px-8 py-6 font-bold text-slate-500">Vận hành khác & Dự phòng</td>
+                        <td class="px-8 py-6 text-center font-semibold text-blue-600">24.3%</td>
+                        <td class="px-8 py-6 text-right font-bold">1.156.000.000</td>
+                        <td class="px-8 py-6 text-sm text-slate-500">Sales, Lễ tân, Điện nước, Sửa chữa.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tab 3: Initial Investment -->
+        <div id="tab-investment" class="table-container hidden-tab">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-slate-50/50 text-slate-500 text-xs uppercase font-bold tracking-widest border-b border-slate-100">
+                        <th class="px-8 py-5">Hạng mục đầu tư</th>
+                        <th class="px-8 py-5 text-right">Số tiền ước tính</th>
+                        <th class="px-8 py-5">Chi tiết đề xuất</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-50">
+                    <tr class="hover:bg-slate-50/50 transition-colors">
+                        <td class="px-8 py-6 font-bold">Máy móc & Thiết bị Gym</td>
+                        <td class="px-8 py-6 text-right font-bold text-blue-600">1.2 - 1.5 Tỷ</td>
+                        <td class="px-8 py-6 text-sm text-slate-500">Dòng máy cao cấp (Panatta/LifeFitness/Matrix). Ưu tiên Free-weights rộng.</td>
                     </tr>
                     <tr class="hover:bg-slate-50/50 transition-colors">
-                        <td class="px-8 py-6 font-bold text-slate-500">Điện nước & Khấu hao</td>
-                        <td class="px-8 py-6 text-center font-semibold text-blue-600">14.3%</td>
-                        <td class="px-8 py-6 text-right font-bold">676.000.000</td>
-                        <td class="px-8 py-6 text-sm text-slate-500">Dự phòng tái đầu tư máy móc định kỳ.</td>
+                        <td class="px-8 py-6 font-bold">Decor & Setup nội thất</td>
+                        <td class="px-8 py-6 text-right font-bold text-blue-600">800 - 900 Triệu</td>
+                        <td class="px-8 py-6 text-sm text-slate-500">Ánh sáng studio chuyên nghiệp, sàn cao su cao cấp, khu vực thay đồ VIP.</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50 transition-colors">
+                        <td class="px-8 py-6 font-bold">Cọc & Thuê mặt bằng (3-6 tháng)</td>
+                        <td class="px-8 py-6 text-right font-bold text-blue-600">600 - 900 Triệu</td>
+                        <td class="px-8 py-6 text-sm text-slate-500">Dự phòng dòng tiền thuê nhà trong giai đoạn thi công & 3 tháng đầu.</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50 transition-colors">
+                        <td class="px-8 py-6 font-bold">Phí Marketing khai trương</td>
+                        <td class="px-8 py-6 text-right font-bold text-blue-600">150 - 200 Triệu</td>
+                        <td class="px-8 py-6 text-sm text-slate-500">Sự kiện Grand Opening, KOLs Fitness, Chiến dịch Pre-sale.</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50 transition-colors">
+                        <td class="px-8 py-6 font-bold">Phần mềm & Pháp lý</td>
+                        <td class="px-8 py-6 text-right font-bold text-blue-600">50 - 100 Triệu</td>
+                        <td class="px-8 py-6 text-sm text-slate-500">Giấy phép kinh doanh, PCCC, App quản lý hội viên & đặt lịch PT.</td>
+                    </tr>
+                    <tr class="bg-blue-50">
+                        <td class="px-8 py-6 font-black text-blue-900 uppercase">Tổng cộng vốn dự phòng</td>
+                        <td class="px-8 py-6 text-right font-black text-blue-700 text-xl">~3.2 Tỷ</td>
+                        <td class="px-8 py-6 text-sm text-blue-800 font-bold italic">Mức an toàn để vận hành ổn định 6 tháng đầu.</td>
                     </tr>
                 </tbody>
             </table>
@@ -195,18 +237,20 @@
         <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
             <div class="bg-blue-50/50 p-6 rounded-2xl border border-blue-100 shadow-sm">
                 <h3 class="font-bold text-blue-900 mb-2 flex items-center uppercase text-xs tracking-widest">
-                    <i class="fa-solid fa-triangle-exclamation mr-2"></i> Rủi ro tài chính
+                    <i class="fa-solid fa-gem mr-2"></i> Lời khuyên đầu tư (Advise)
                 </h3>
-                <p class="text-sm text-blue-800 leading-relaxed">
-                    Nếu tỷ lệ gia hạn khách (Retention) thấp hơn 60%, chi phí Marketing sẽ phải tăng gấp đôi để bù khách, trực tiếp triệt tiêu lợi nhuận 800tr.
-                </p>
+                <ul class="text-sm text-blue-800 leading-relaxed space-y-2">
+                    <li>• <strong>Đừng tiết kiệm sàn & ánh sáng:</strong> Với mức 800k/buổi, khách mua "không gian" nhiều hơn mua "máy".</li>
+                    <li>• <strong>Khu vực Locker & WC:</strong> Phải đạt chuẩn khách sạn 4-5 sao (có máy sấy, khăn sạch, mùi thơm). Đây là điểm khách quyết định gia hạn.</li>
+                    <li>• <strong>Dòng máy:</strong> Chỉ nên mua 15-20 đầu máy thực sự chất lượng hơn là mua 50 máy rẻ tiền tràn ngập 300m2.</li>
+                </ul>
             </div>
             <div class="bg-emerald-50/50 p-6 rounded-2xl border border-emerald-100 shadow-sm">
                 <h3 class="font-bold text-emerald-900 mb-2 flex items-center uppercase text-xs tracking-widest">
-                    <i class="fa-solid fa-lightbulb mr-2"></i> Tối ưu hóa
+                    <i class="fa-solid fa-money-bill-trend-up mr-2"></i> Chiến lược Pre-sale
                 </h3>
                 <p class="text-sm text-emerald-800 leading-relaxed">
-                    Tập trung vào các gói tập dài hạn (6-12 tháng) để dòng tiền mặt (Cashflow) về mạnh trong những tháng đầu, giảm áp lực bù lỗ.
+                    Nên chạy Pre-sale trước khi khai trương 1-2 tháng. Mục tiêu thu hồi 20-30% vốn đầu tư (khoảng 600-800tr) ngay trước ngày mở cửa để giảm áp lực dòng tiền.
                 </p>
             </div>
         </div>
@@ -217,18 +261,23 @@
             // Hide all tabs
             document.getElementById('tab-revenue').classList.add('hidden-tab');
             document.getElementById('tab-expense').classList.add('hidden-tab');
+            document.getElementById('tab-investment').classList.add('hidden-tab');
             
             // Remove active class from buttons
             document.getElementById('btn-revenue').classList.remove('active');
             document.getElementById('btn-expense').classList.remove('active');
+            document.getElementById('btn-investment').classList.remove('active');
             
             // Show selected tab & set active button
             if(tabName === 'revenue') {
                 document.getElementById('tab-revenue').classList.remove('hidden-tab');
                 document.getElementById('btn-revenue').classList.add('active');
-            } else {
+            } else if(tabName === 'expense') {
                 document.getElementById('tab-expense').classList.remove('hidden-tab');
                 document.getElementById('btn-expense').classList.add('active');
+            } else {
+                document.getElementById('tab-investment').classList.remove('hidden-tab');
+                document.getElementById('btn-investment').classList.add('active');
             }
         }
     </script>
