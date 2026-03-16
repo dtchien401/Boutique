@@ -6,6 +6,7 @@
     </p>
   </div>
 
+  <!-- Assumption Cards -->
   <div class="p-6 md:p-8 border-b border-slate-100 bg-white">
     <h3 class="text-lg font-black text-slate-900 mb-4">Giả định mô hình chi phí</h3>
 
@@ -36,6 +37,7 @@
     </div>
   </div>
 
+  <!-- Year Summary -->
   <div class="p-6 md:p-8 bg-slate-50/60 border-b border-slate-100">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
       <div class="rounded-2xl bg-white border border-slate-200 p-5">
@@ -60,6 +62,119 @@
     </div>
   </div>
 
+  <!-- Detailed Cost Breakdown -->
+  <div class="p-6 md:p-8 border-b border-slate-100 bg-white">
+    <h3 class="text-lg font-black text-slate-900 mb-4">Chi tiết từng nhóm chi phí</h3>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Fixed Cost -->
+      <div class="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden">
+        <div class="px-6 py-4 bg-slate-50 border-b border-slate-100">
+          <h4 class="font-black text-slate-900">1. Chi phí cố định / tháng</h4>
+          <p class="text-sm text-slate-500 mt-1">Các khoản gần như không đổi theo công suất vận hành từng tháng</p>
+        </div>
+
+        <div class="p-6">
+          <div class="space-y-3 text-sm text-slate-700">
+            <div class="flex justify-between"><span>Thuê mặt bằng</span><span class="font-semibold">290.000.000</span></div>
+            <div class="flex justify-between"><span>Phí quản lý tòa nhà & an ninh</span><span class="font-semibold">35.000.000</span></div>
+            <div class="flex justify-between"><span>Lương lễ tân / front desk</span><span class="font-semibold">45.000.000</span></div>
+            <div class="flex justify-between"><span>Lương tạp vụ / vệ sinh</span><span class="font-semibold">25.000.000</span></div>
+            <div class="flex justify-between"><span>Internet / phần mềm / CRM / SaaS</span><span class="font-semibold">25.000.000</span></div>
+            <div class="flex justify-between"><span>Admin / kế toán / hỗ trợ vận hành</span><span class="font-semibold">40.000.000</span></div>
+            <div class="flex justify-between"><span>Fixed marketing nền</span><span class="font-semibold">60.000.000</span></div>
+            <div class="flex justify-between"><span>Dự phòng bảo trì / hao hụt / phát sinh</span><span class="font-semibold">80.000.000</span></div>
+
+            <div class="border-t border-slate-200 pt-3 flex justify-between font-black text-slate-900">
+              <span>Tổng chi phí cố định / tháng</span>
+              <span>600.000.000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Payroll -->
+      <div class="rounded-2xl border border-emerald-200 bg-white shadow-sm overflow-hidden">
+        <div class="px-6 py-4 bg-emerald-50 border-b border-emerald-100">
+          <h4 class="font-black text-emerald-900">2. Lương & hoa hồng biến đổi</h4>
+          <p class="text-sm text-emerald-700 mt-1">Tăng theo doanh thu, số khách và cường độ sử dụng PT mỗi tháng</p>
+        </div>
+
+        <div class="p-6">
+          <div class="space-y-3 text-sm text-slate-700">
+            <div class="flex justify-between"><span>Hoa hồng buổi PT</span><span class="font-semibold">~28%</span></div>
+            <div class="flex justify-between"><span>Lương cứng đội PT</span><span class="font-semibold">~4%</span></div>
+            <div class="flex justify-between"><span>Thưởng KPI / incentive năng suất</span><span class="font-semibold">~2%</span></div>
+            <div class="flex justify-between"><span>Bảo hiểm / phúc lợi / phụ cấp</span><span class="font-semibold">~1%</span></div>
+
+            <div class="border-t border-emerald-100 pt-3 flex justify-between font-black text-emerald-900">
+              <span>Tổng tỷ lệ payroll biến đổi</span>
+              <span>35% doanh thu</span>
+            </div>
+          </div>
+
+          <div class="mt-4 rounded-xl bg-emerald-50 p-4 text-sm text-emerald-800 leading-relaxed">
+            Khoản này phản ánh việc khi số PT tăng, số khách tăng và số buổi training tăng, tổng quỹ lương và hoa hồng cũng tăng theo thay vì giữ cố định.
+          </div>
+        </div>
+      </div>
+
+      <!-- Ops -->
+      <div class="rounded-2xl border border-blue-200 bg-white shadow-sm overflow-hidden">
+        <div class="px-6 py-4 bg-blue-50 border-b border-blue-100">
+          <h4 class="font-black text-blue-900">3. Chi phí vận hành biến đổi</h4>
+          <p class="text-sm text-blue-700 mt-1">Các khoản tăng theo mức độ sử dụng trung tâm</p>
+        </div>
+
+        <div class="p-6">
+          <div class="space-y-3 text-sm text-slate-700">
+            <div class="flex justify-between"><span>Điện năng vận hành</span><span class="font-semibold">~2.0%</span></div>
+            <div class="flex justify-between"><span>Nước / tiện ích</span><span class="font-semibold">~0.5%</span></div>
+            <div class="flex justify-between"><span>Khăn / boutique / vật tư tiêu hao</span><span class="font-semibold">~1.0%</span></div>
+            <div class="flex justify-between"><span>Tea / coffee / lounge service</span><span class="font-semibold">~0.5%</span></div>
+            <div class="flex justify-between"><span>Vệ sinh tiêu hao / hóa chất / amenities</span><span class="font-semibold">~1.0%</span></div>
+
+            <div class="border-t border-blue-100 pt-3 flex justify-between font-black text-blue-900">
+              <span>Tổng ops biến đổi</span>
+              <span>5% doanh thu</span>
+            </div>
+          </div>
+
+          <div class="mt-4 rounded-xl bg-blue-50 p-4 text-sm text-blue-800 leading-relaxed">
+            Công suất sử dụng càng cao thì điện, nước, khăn, amenities và lounge service càng tăng theo.
+          </div>
+        </div>
+      </div>
+
+      <!-- Marketing -->
+      <div class="rounded-2xl border border-orange-200 bg-white shadow-sm overflow-hidden">
+        <div class="px-6 py-4 bg-orange-50 border-b border-orange-100">
+          <h4 class="font-black text-orange-900">4. Growth Marketing</h4>
+          <p class="text-sm text-orange-700 mt-1">Các khoản thúc đẩy tăng trưởng khách hàng và mở rộng công suất</p>
+        </div>
+
+        <div class="p-6">
+          <div class="space-y-3 text-sm text-slate-700">
+            <div class="flex justify-between"><span>Digital ads / lead generation</span><span class="font-semibold">~3.0%</span></div>
+            <div class="flex justify-between"><span>Referral incentive / member get member</span><span class="font-semibold">~1.0%</span></div>
+            <div class="flex justify-between"><span>Workshop / event / activation</span><span class="font-semibold">~0.7%</span></div>
+            <div class="flex justify-between"><span>Content / media / local branding</span><span class="font-semibold">~0.3%</span></div>
+
+            <div class="border-t border-orange-100 pt-3 flex justify-between font-black text-orange-900">
+              <span>Tổng growth marketing</span>
+              <span>5% doanh thu</span>
+            </div>
+          </div>
+
+          <div class="mt-4 rounded-xl bg-orange-50 p-4 text-sm text-orange-800 leading-relaxed">
+            Khoản này giúp tạo lead mới, kích hoạt referral và duy trì tốc độ tăng khách để đạt target 50 PT và 500 khách ở giai đoạn full capacity.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Monthly Table -->
   <div class="overflow-x-auto">
     <table class="w-full text-left border-collapse">
       <thead>
@@ -82,24 +197,22 @@
     </table>
   </div>
 
+  <!-- Footer Insight -->
   <div class="p-6 md:p-8 border-t border-slate-100 bg-white">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-        <h4 class="font-black text-slate-900 mb-3">Chi phí cố định gồm</h4>
-        <div class="space-y-2 text-sm text-slate-700">
-          <div class="flex justify-between"><span>Thuê mặt bằng + phí quản lý</span><span class="font-semibold">350.000.000</span></div>
-          <div class="flex justify-between"><span>Backoffice / lễ tân / tạp vụ</span><span class="font-semibold">100.000.000</span></div>
-          <div class="flex justify-between"><span>Internet / software / admin</span><span class="font-semibold">70.000.000</span></div>
-          <div class="flex justify-between"><span>Marketing nền / dự phòng</span><span class="font-semibold">80.000.000</span></div>
-          <div class="flex justify-between border-t border-slate-200 pt-2 font-black text-slate-900"><span>Tổng fixed / tháng</span><span>600.000.000</span></div>
-        </div>
+        <h4 class="font-black text-slate-900 mb-3">Ý nghĩa quản trị</h4>
+        <p class="text-sm leading-relaxed text-slate-700">
+          Cấu trúc này giúp tách rõ giữa <strong>fixed cost</strong> và <strong>variable cost</strong>. 
+          Nhờ đó bạn có thể nhìn được tháng nào đang gánh fixed cost, tháng nào bắt đầu vượt break-even và từ thời điểm nào lợi nhuận scale mạnh khi công suất được lấp đầy.
+        </p>
       </div>
 
       <div class="rounded-2xl border border-emerald-200 bg-emerald-50 p-6">
         <h4 class="font-black text-emerald-900 mb-3">Nguyên tắc vận hành</h4>
         <p class="text-sm leading-relaxed text-emerald-800">
           Khi doanh thu tăng theo số lượng PT và số khách, phần lương & hoa hồng nhân viên cũng tăng theo. 
-          Cách trình bày này giúp nhìn rõ điểm hòa vốn, tốc độ mở rộng công suất và lợi nhuận thực tế theo từng tháng thay vì dùng một tỷ lệ cost cố định cho cả năm.
+          Cách trình bày này giúp nhìn rõ điểm hòa vốn, tốc độ mở rộng công suất và lợi nhuận thực tế theo từng tháng thay vì dùng một tỷ lệ chi phí cố định cho cả năm.
         </p>
       </div>
     </div>
