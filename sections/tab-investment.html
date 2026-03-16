@@ -1,14 +1,114 @@
 <div id="tab-investment" class="table-container hidden-tab">
   <div class="p-8 bg-blue-50/30 border-b border-blue-100">
-    <h2 class="text-2xl font-black text-slate-900">Tổng kết ngân sách đầu tư ban đầu</h2>
+    <h2 class="text-2xl font-black text-slate-900">Tổng mức đầu tư & vốn lưu động</h2>
+    <p class="text-slate-500 mt-2">
+      Bao gồm capex đầu tư ban đầu và phần vốn lưu động để cover giai đoạn ramp-up chưa đạt công suất tối đa.
+    </p>
   </div>
-  <table class="w-full text-left border-collapse">
-    <tbody class="divide-y divide-slate-100">
-      <tr><td class="px-8 py-6 font-bold text-lg">Máy móc thiết bị</td><td class="px-8 py-6 text-right font-bold text-lg">1.350.000.000</td></tr>
-      <tr><td class="px-8 py-6 font-bold text-lg">Thi công & Decor</td><td class="px-8 py-6 text-right font-bold text-lg">1.100.000.000</td></tr>
-      <tr><td class="px-8 py-6 font-bold text-lg">Cọc & Trả trước mặt bằng</td><td class="px-8 py-6 text-right font-bold text-lg">1.200.000.000</td></tr>
-      <tr><td class="px-8 py-6 font-bold text-lg">Vốn lưu động & Marketing</td><td class="px-8 py-6 text-right font-bold text-lg">450.000.000</td></tr>
-      <tr class="bg-slate-900 text-white"><td class="px-8 py-8 font-black text-xl">TỔNG VỐN ĐẦU TƯ</td><td class="px-8 py-8 text-right font-black text-3xl">4.100.000.000</td></tr>
-    </tbody>
-  </table>
+
+  <!-- Top summary cards -->
+  <div class="p-6 md:p-8 bg-white border-b border-slate-100">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Capex đầu tư ban đầu</p>
+        <div class="text-2xl font-black text-slate-900">3.650.000.000</div>
+        <p class="text-sm text-slate-500 mt-1">Máy móc + xây dựng + cọc</p>
+      </div>
+
+      <div class="rounded-2xl border border-orange-200 bg-orange-50 p-5">
+        <p class="text-xs font-bold uppercase tracking-wider text-orange-600 mb-2">Vốn lưu động</p>
+        <div class="text-2xl font-black text-orange-700">1.500.000.000</div>
+        <p class="text-sm text-orange-700 mt-1">Cover ramp-up & lỗ đầu kỳ</p>
+      </div>
+
+      <div class="rounded-2xl border border-emerald-200 bg-emerald-50 p-5">
+        <p class="text-xs font-bold uppercase tracking-wider text-emerald-600 mb-2">Marketing launch</p>
+        <div class="text-2xl font-black text-emerald-700">450.000.000</div>
+        <p class="text-sm text-emerald-700 mt-1">Pre-opening + activation</p>
+      </div>
+
+      <div class="rounded-2xl bg-slate-900 text-white border border-slate-900 p-5">
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Tổng cash cần chuẩn bị</p>
+        <div class="text-2xl font-black">5.600.000.000</div>
+        <p class="text-sm text-slate-300 mt-1">Để launch và vượt giai đoạn đầu</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main table -->
+  <div class="overflow-x-auto">
+    <table class="w-full text-left border-collapse">
+      <thead>
+        <tr class="bg-slate-50/50 text-slate-500 text-xs uppercase font-bold tracking-widest border-b border-slate-100">
+          <th class="px-8 py-5">Hạng mục đầu tư</th>
+          <th class="px-8 py-5">Nhóm</th>
+          <th class="px-8 py-5 text-right">Ngân sách (VNĐ)</th>
+          <th class="px-8 py-5">Ghi chú</th>
+        </tr>
+      </thead>
+
+      <tbody class="divide-y divide-slate-100">
+        <tr class="hover:bg-slate-50/50 transition-colors">
+          <td class="px-8 py-6 font-bold text-lg">Máy móc thiết bị</td>
+          <td class="px-8 py-6">Capex</td>
+          <td class="px-8 py-6 text-right font-bold text-lg">1.350.000.000</td>
+          <td class="px-8 py-6 text-slate-500">Thiết bị tập luyện, assessment, accessories</td>
+        </tr>
+
+        <tr class="hover:bg-slate-50/50 transition-colors">
+          <td class="px-8 py-6 font-bold text-lg">Thi công & Decor</td>
+          <td class="px-8 py-6">Capex</td>
+          <td class="px-8 py-6 text-right font-bold text-lg">1.100.000.000</td>
+          <td class="px-8 py-6 text-slate-500">Cải tạo thô, MEP, locker, lounge, finishings</td>
+        </tr>
+
+        <tr class="hover:bg-slate-50/50 transition-colors">
+          <td class="px-8 py-6 font-bold text-lg">Cọc & Trả trước mặt bằng</td>
+          <td class="px-8 py-6">Capex / Launch</td>
+          <td class="px-8 py-6 text-right font-bold text-lg">1.200.000.000</td>
+          <td class="px-8 py-6 text-slate-500">Deposit + rent advance</td>
+        </tr>
+
+        <tr class="hover:bg-slate-50/50 transition-colors">
+          <td class="px-8 py-6 font-bold text-lg">Marketing Launch</td>
+          <td class="px-8 py-6">Launch Cost</td>
+          <td class="px-8 py-6 text-right font-bold text-lg">450.000.000</td>
+          <td class="px-8 py-6 text-slate-500">Pre-opening, activation, lead gen, event</td>
+        </tr>
+
+        <tr class="bg-orange-50 hover:bg-orange-50">
+          <td class="px-8 py-6 font-bold text-lg text-orange-900">Vốn lưu động cover ramp-up</td>
+          <td class="px-8 py-6 text-orange-800">Working Capital</td>
+          <td class="px-8 py-6 text-right font-bold text-lg text-orange-900">1.500.000.000</td>
+          <td class="px-8 py-6 text-orange-800">Dùng để cover các tháng đầu chưa đạt break-even, payroll, fixed cost và buffer dòng tiền</td>
+        </tr>
+
+        <tr class="bg-slate-900 text-white">
+          <td class="px-8 py-8 font-black text-xl">TỔNG CASH CẦN ĐẦU TƯ</td>
+          <td class="px-8 py-8 font-bold text-slate-300">Capex + Launch + Working Capital</td>
+          <td class="px-8 py-8 text-right font-black text-3xl">5.600.000.000</td>
+          <td class="px-8 py-8 text-slate-300">Đảm bảo launch và vận hành an toàn giai đoạn đầu</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Management note -->
+  <div class="p-6 md:p-8 border-t border-slate-100 bg-white">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+        <h4 class="font-black text-slate-900 mb-3">Vì sao cần vốn lưu động</h4>
+        <p class="text-sm leading-relaxed text-slate-700">
+          Mô hình PT Center không đạt công suất tối đa ngay từ tháng đầu. Trong giai đoạn ramp-up, trung tâm vẫn phải chi trả fixed cost, lương cơ bản, vận hành và marketing trước khi doanh thu đủ lớn để hấp thụ toàn bộ chi phí.
+        </p>
+      </div>
+
+      <div class="rounded-2xl border border-orange-200 bg-orange-50 p-6">
+        <h4 class="font-black text-orange-900 mb-3">Nguyên tắc quản trị dòng tiền</h4>
+        <p class="text-sm leading-relaxed text-orange-800">
+          Working capital không phải là phần chi tiêu “mất đi” ngay từ đầu, mà là vùng đệm dòng tiền để giúp mô hình đi qua các tháng lỗ ban đầu một cách an toàn, tránh áp lực cashflow quá sớm trong khi vẫn đang xây productivity cho PT team.
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
