@@ -1,1 +1,122 @@
+<div id="tab-expense" class="table-container hidden-tab">
+  <div class="p-6 bg-emerald-50 border-b border-emerald-100">
+    <p class="text-sm text-emerald-800 font-medium italic">
+      <i class="fa-solid fa-shield-check mr-2"></i> Đã tối ưu hóa tỷ lệ chi phí xuống 70% doanh thu. Mục tiêu nâng biên lợi nhuận ròng lên 30%.
+    </p>
+  </div>
 
+  <div class="w-full">
+    <div class="border-b border-slate-100">
+      <button onclick="toggleAccordion('exp-personnel')" class="w-full flex items-center justify-between px-8 py-6 hover:bg-slate-50 transition-colors">
+        <div class="flex items-center">
+          <i id="icon-exp-personnel" class="fa-solid fa-chevron-down mr-4 text-slate-400 rotate-icon"></i>
+          <span class="font-bold text-slate-800">Quỹ lương & Hoa hồng (Tối ưu)</span>
+        </div>
+        <div class="flex items-center gap-12">
+          <span class="text-emerald-600 font-bold">38%</span>
+          <span class="font-bold w-32 text-right">1.824.000.000</span>
+        </div>
+      </button>
+      <div id="exp-personnel" class="accordion-content">
+        <div class="px-20 py-4 space-y-3 text-sm border-t border-slate-50 bg-slate-50/30">
+          <div class="flex justify-between"><span>Hoa hồng buổi dạy (Tối ưu bậc thang tb 30%)</span><span class="font-medium">1.440.000.000</span></div>
+          <div class="flex justify-between"><span>Lương cứng PT & Thưởng KPI</span><span class="font-medium">250.000.000</span></div>
+          <div class="flex justify-between"><span>Bảo hiểm & Phúc lợi nhân sự</span><span class="font-medium">134.000.000</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-b border-slate-100">
+      <button onclick="toggleAccordion('exp-fixed')" class="w-full flex items-center justify-between px-8 py-6 hover:bg-slate-50 transition-colors">
+        <div class="flex items-center">
+          <i id="icon-exp-fixed" class="fa-solid fa-chevron-down mr-4 text-slate-400 rotate-icon"></i>
+          <span class="font-bold text-slate-800">Mặt bằng & Cố định</span>
+        </div>
+        <div class="flex items-center gap-12">
+          <span class="text-emerald-600 font-bold">7.3%</span>
+          <span class="font-bold w-32 text-right">350.000.000</span>
+        </div>
+      </button>
+      <div id="exp-fixed" class="accordion-content">
+        <div class="px-20 py-4 space-y-3 text-sm border-t border-slate-50 bg-slate-50/30">
+          <div class="flex justify-between"><span>Thuê mặt bằng (Đã bao gồm đàm phán)</span><span class="font-medium">290.000.000</span></div>
+          <div class="flex justify-between"><span>Phí quản lý & An ninh</span><span class="font-medium">35.000.000</span></div>
+          <div class="flex justify-between"><span>Internet & Software (SaaS)</span><span class="font-medium">25.000.000</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-b border-slate-100">
+      <button onclick="toggleAccordion('exp-ops')" class="w-full flex items-center justify-between px-8 py-6 hover:bg-slate-50 transition-colors">
+        <div class="flex items-center">
+          <i id="icon-exp-ops" class="fa-solid fa-chevron-down mr-4 text-slate-400 rotate-icon"></i>
+          <span class="font-bold text-slate-800">Vận hành & Tiện ích (Kiểm soát phí)</span>
+        </div>
+        <div class="flex items-center gap-12">
+          <span class="text-emerald-600 font-bold">5%</span>
+          <span class="font-bold w-32 text-right">240.000.000</span>
+        </div>
+      </button>
+      <div id="exp-ops" class="accordion-content">
+        <div class="px-20 py-4 space-y-3 text-sm border-t border-slate-50 bg-slate-50/30">
+          <div class="flex justify-between"><span>Điện & Nước (Tối ưu hóa Inverter)</span><span class="font-medium">75.000.000</span></div>
+          <div class="flex justify-between"><span>Vật tư Boutique (Khăn, xà phòng, tinh dầu)</span><span class="font-medium">45.000.000</span></div>
+          <div class="flex justify-between"><span>Lương Backoffice (Lễ tân, Tạp vụ)</span><span class="font-medium">100.000.000</span></div>
+          <div class="flex justify-between"><span>Dịch vụ Tea/Coffee Lounge (VIP)</span><span class="font-medium">20.000.000</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-b border-slate-100">
+      <button onclick="toggleAccordion('exp-growth')" class="w-full flex items-center justify-between px-8 py-6 hover:bg-slate-50 transition-colors">
+        <div class="flex items-center">
+          <i id="icon-exp-growth" class="fa-solid fa-chevron-down mr-4 text-slate-400 rotate-icon"></i>
+          <span class="font-bold text-slate-800">Marketing & Phát triển</span>
+        </div>
+        <div class="flex items-center gap-12">
+          <span class="text-emerald-600 font-bold">10%</span>
+          <span class="font-bold w-32 text-right">480.000.000</span>
+        </div>
+      </button>
+      <div id="exp-growth" class="accordion-content">
+        <div class="px-20 py-4 space-y-3 text-sm border-t border-slate-50 bg-slate-50/30">
+          <div class="flex justify-between"><span>Quảng cáo Digital (Tăng tỷ lệ CR)</span><span class="font-medium">300.000.000</span></div>
+          <div class="flex justify-between"><span>Chăm sóc khách hàng cũ (Referral)</span><span class="font-medium">100.000.000</span></div>
+          <div class="flex justify-between"><span>Sự kiện & Workshop chuyên môn</span><span class="font-medium">80.000.000</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-b border-slate-100">
+      <button onclick="toggleAccordion('exp-tax')" class="w-full flex items-center justify-between px-8 py-6 hover:bg-slate-50 transition-colors">
+        <div class="flex items-center">
+          <i id="icon-exp-tax" class="fa-solid fa-chevron-down mr-4 text-slate-400 rotate-icon"></i>
+          <span class="font-bold text-slate-800">Thuế & Dự phòng rủi ro</span>
+        </div>
+        <div class="flex items-center gap-12">
+          <span class="text-emerald-600 font-bold">9.7%</span>
+          <span class="font-bold w-32 text-right">466.000.000</span>
+        </div>
+      </button>
+      <div id="exp-tax" class="accordion-content">
+        <div class="px-20 py-4 space-y-3 text-sm border-t border-slate-50 bg-slate-50/30">
+          <div class="flex justify-between"><span>Thuế & Phí quản lý nhà nước</span><span class="font-medium">350.000.000</span></div>
+          <div class="flex justify-between"><span>Bảo trì thiết bị & Dự phòng</span><span class="font-medium">116.000.000</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-emerald-600 text-white">
+      <div class="flex items-center justify-between px-8 py-8">
+        <div class="flex flex-col">
+          <span class="font-black text-xl uppercase tracking-widest text-emerald-100">TỔNG CHI PHÍ VẬN HÀNH</span>
+          <span class="text-sm font-medium text-emerald-200">Đã tối ưu hóa cơ cấu hoa hồng & quản trị vận hành</span>
+        </div>
+        <div class="flex items-center gap-12">
+          <span class="bg-white text-emerald-700 px-4 py-1 rounded-full text-sm font-bold">70% DOANH THU</span>
+          <span class="font-black text-2xl text-white">3.360.000.000</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
