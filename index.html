@@ -75,8 +75,8 @@
             </div>
             <div class="stat-card">
                 <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Tổng vốn đầu tư</p>
-                <div class="text-2xl font-black text-orange-600">~2.8 - 3.5 Tỷ</div>
-                <p class="text-sm text-slate-500 mt-1">Ước tính cho 300m2</p>
+                <div class="text-2xl font-black text-orange-600">~3.2 - 3.8 Tỷ</div>
+                <p class="text-sm text-slate-500 mt-1">Bao gồm dự phòng</p>
             </div>
             <div class="stat-card">
                 <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Tổng Chi phí / Tháng</p>
@@ -91,15 +91,18 @@
         </div>
 
         <!-- Tabs Navigation -->
-        <div class="flex border-b border-slate-200 mb-6 bg-white rounded-t-xl overflow-hidden shadow-sm">
-            <button onclick="switchTab('revenue')" id="btn-revenue" class="tab-btn active px-8 py-4 font-bold text-sm uppercase tracking-wider flex items-center">
-                <i class="fa-solid fa-calendar-days mr-2"></i> Lộ trình Doanh thu
+        <div class="flex border-b border-slate-200 mb-6 bg-white rounded-t-xl overflow-hidden shadow-sm overflow-x-auto">
+            <button onclick="switchTab('revenue')" id="btn-revenue" class="tab-btn active px-6 py-4 font-bold text-sm uppercase tracking-wider flex items-center whitespace-nowrap">
+                <i class="fa-solid fa-calendar-days mr-2"></i> Doanh thu
             </button>
-            <button onclick="switchTab('expense')" id="btn-expense" class="tab-btn px-8 py-4 font-bold text-sm uppercase tracking-wider flex items-center">
-                <i class="fa-solid fa-file-invoice-dollar mr-2"></i> Chi phí vận hành
+            <button onclick="switchTab('expense')" id="btn-expense" class="tab-btn px-6 py-4 font-bold text-sm uppercase tracking-wider flex items-center whitespace-nowrap">
+                <i class="fa-solid fa-file-invoice-dollar mr-2"></i> Chi phí
             </button>
-            <button onclick="switchTab('investment')" id="btn-investment" class="tab-btn px-8 py-4 font-bold text-sm uppercase tracking-wider flex items-center">
-                <i class="fa-solid fa-vault mr-2"></i> Vốn đầu tư ban đầu
+            <button onclick="switchTab('investment')" id="btn-investment" class="tab-btn px-6 py-4 font-bold text-sm uppercase tracking-wider flex items-center whitespace-nowrap">
+                <i class="fa-solid fa-vault mr-2"></i> Tổng vốn
+            </button>
+            <button onclick="switchTab('equip')" id="btn-equip" class="tab-btn px-6 py-4 font-bold text-sm uppercase tracking-wider flex items-center whitespace-nowrap">
+                <i class="fa-solid fa-dumbbell mr-2"></i> Danh mục Thiết bị
             </button>
         </div>
 
@@ -202,32 +205,82 @@
                     <tr class="hover:bg-slate-50/50 transition-colors">
                         <td class="px-8 py-6 font-bold">Máy móc & Thiết bị Gym</td>
                         <td class="px-8 py-6 text-right font-bold text-blue-600">1.2 - 1.5 Tỷ</td>
-                        <td class="px-8 py-6 text-sm text-slate-500">Dòng máy cao cấp (Panatta/LifeFitness/Matrix). Ưu tiên Free-weights rộng.</td>
+                        <td class="px-8 py-6 text-sm text-slate-500">Dòng máy cao cấp nhập khẩu. (Xem Tab Thiết bị)</td>
                     </tr>
                     <tr class="hover:bg-slate-50/50 transition-colors">
                         <td class="px-8 py-6 font-bold">Decor & Setup nội thất</td>
                         <td class="px-8 py-6 text-right font-bold text-blue-600">800 - 900 Triệu</td>
-                        <td class="px-8 py-6 text-sm text-slate-500">Ánh sáng studio chuyên nghiệp, sàn cao su cao cấp, khu vực thay đồ VIP.</td>
+                        <td class="px-8 py-6 text-sm text-slate-500">Ánh sáng studio, sàn cao su cao cấp, khu WC VIP.</td>
                     </tr>
                     <tr class="hover:bg-slate-50/50 transition-colors">
-                        <td class="px-8 py-6 font-bold">Cọc & Thuê mặt bằng (3-6 tháng)</td>
+                        <td class="px-8 py-6 font-bold">Cọc & Thuê mặt bằng</td>
                         <td class="px-8 py-6 text-right font-bold text-blue-600">600 - 900 Triệu</td>
-                        <td class="px-8 py-6 text-sm text-slate-500">Dự phòng dòng tiền thuê nhà trong giai đoạn thi công & 3 tháng đầu.</td>
+                        <td class="px-8 py-6 text-sm text-slate-500">Dự phòng mặt bằng 6 tháng đầu.</td>
                     </tr>
                     <tr class="hover:bg-slate-50/50 transition-colors">
-                        <td class="px-8 py-6 font-bold">Phí Marketing khai trương</td>
+                        <td class="px-8 py-6 font-bold">Marketing khai trương</td>
                         <td class="px-8 py-6 text-right font-bold text-blue-600">150 - 200 Triệu</td>
-                        <td class="px-8 py-6 text-sm text-slate-500">Sự kiện Grand Opening, KOLs Fitness, Chiến dịch Pre-sale.</td>
-                    </tr>
-                    <tr class="hover:bg-slate-50/50 transition-colors">
-                        <td class="px-8 py-6 font-bold">Phần mềm & Pháp lý</td>
-                        <td class="px-8 py-6 text-right font-bold text-blue-600">50 - 100 Triệu</td>
-                        <td class="px-8 py-6 text-sm text-slate-500">Giấy phép kinh doanh, PCCC, App quản lý hội viên & đặt lịch PT.</td>
+                        <td class="px-8 py-6 text-sm text-slate-500">Pre-sale và Grand Opening.</td>
                     </tr>
                     <tr class="bg-blue-50">
                         <td class="px-8 py-6 font-black text-blue-900 uppercase">Tổng cộng vốn dự phòng</td>
                         <td class="px-8 py-6 text-right font-black text-blue-700 text-xl">~3.2 Tỷ</td>
-                        <td class="px-8 py-6 text-sm text-blue-800 font-bold italic">Mức an toàn để vận hành ổn định 6 tháng đầu.</td>
+                        <td class="px-8 py-6 text-sm text-blue-800 font-bold italic">Mức an toàn để vận hành ổn định.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tab 4: Detailed Equipment -->
+        <div id="tab-equip" class="table-container hidden-tab">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-slate-50/50 text-slate-500 text-xs uppercase font-bold tracking-widest border-b border-slate-100">
+                        <th class="px-8 py-5">Nhóm thiết bị</th>
+                        <th class="px-8 py-5">Chi tiết đề xuất (Số lượng)</th>
+                        <th class="px-8 py-5 text-right">Ước tính (VNĐ)</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-50">
+                    <tr class="hover:bg-slate-50/50 transition-colors">
+                        <td class="px-8 py-6 font-bold text-slate-800">Cardio (Tim mạch)</td>
+                        <td class="px-8 py-6 text-sm text-slate-600">
+                            - 4 Máy chạy bộ cao cấp (màn hình LED/Touch)<br>
+                            - 2 Xe đạp trượt tuyết (Elliptical)<br>
+                            - 1 Máy leo cầu thang (StairMaster) - <span class="text-orange-600 font-bold">Trend cực hot</span>
+                        </td>
+                        <td class="px-8 py-6 text-right font-bold">450.000.000</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50 transition-colors">
+                        <td class="px-8 py-6 font-bold text-slate-800">Free Weights (Tạ rời)</td>
+                        <td class="px-8 py-6 text-sm text-slate-600">
+                            - 2 Bộ tạ tay (Dumbbell) 2.5kg - 40kg (Urethane cao cấp)<br>
+                            - 2 Giàn Rack (Power Rack/Half Rack)<br>
+                            - 4 Ghế tập đa năng (Adjustable Bench)
+                        </td>
+                        <td class="px-8 py-6 text-right font-bold">350.000.000</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50 transition-colors">
+                        <td class="px-8 py-6 font-bold text-slate-800">Strength Machines</td>
+                        <td class="px-8 py-6 text-sm text-slate-600">
+                            - 1 Dual Adjustable Pulley (Máy cáp đôi đa năng)<br>
+                            - 1 Leg Press (Đạp đùi)<br>
+                            - 1 Lat Pulldown / Row (Xô/Lưng kết hợp)<br>
+                            - 1 Smith Machine
+                        </td>
+                        <td class="px-8 py-6 text-right font-bold">400.000.000</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50 transition-colors">
+                        <td class="px-8 py-6 font-bold text-slate-800">Functional & Tools</td>
+                        <td class="px-8 py-6 text-sm text-slate-600">
+                            - Thảm tập, bóng Yoga, dây kháng lực, tạ ấm (Kettlebell)<br>
+                            - Máy đo Inbody 270/370 (Bắt buộc để tư vấn khách)
+                        </td>
+                        <td class="px-8 py-6 text-right font-bold">150.000.000</td>
+                    </tr>
+                    <tr class="bg-blue-900 text-white">
+                        <td colspan="2" class="px-8 py-6 font-bold uppercase">Tổng ngân sách máy móc dự kiến</td>
+                        <td class="px-8 py-6 text-right font-black text-xl text-emerald-400">1.350.000.000</td>
                     </tr>
                 </tbody>
             </table>
@@ -237,20 +290,20 @@
         <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
             <div class="bg-blue-50/50 p-6 rounded-2xl border border-blue-100 shadow-sm">
                 <h3 class="font-bold text-blue-900 mb-2 flex items-center uppercase text-xs tracking-widest">
-                    <i class="fa-solid fa-gem mr-2"></i> Lời khuyên đầu tư (Advise)
+                    <i class="fa-solid fa-gem mr-2"></i> Lời khuyên thiết bị (Advise)
                 </h3>
                 <ul class="text-sm text-blue-800 leading-relaxed space-y-2">
-                    <li>• <strong>Đừng tiết kiệm sàn & ánh sáng:</strong> Với mức 800k/buổi, khách mua "không gian" nhiều hơn mua "máy".</li>
-                    <li>• <strong>Khu vực Locker & WC:</strong> Phải đạt chuẩn khách sạn 4-5 sao (có máy sấy, khăn sạch, mùi thơm). Đây là điểm khách quyết định gia hạn.</li>
-                    <li>• <strong>Dòng máy:</strong> Chỉ nên mua 15-20 đầu máy thực sự chất lượng hơn là mua 50 máy rẻ tiền tràn ngập 300m2.</li>
+                    <li>• <strong>Ưu tiên Free-weights:</strong> Với mô hình PT Center, PT cần không gian để hướng dẫn kỹ thuật. Máy khối (Selectorized) chiếm diện tích và ít linh hoạt hơn.</li>
+                    <li>• <strong>Máy Inbody:</strong> Đừng mua máy rẻ tiền. Inbody là công cụ "bán hàng" mạnh nhất của PT để thuyết phục khách mua gói tập.</li>
+                    <li>• <strong>Vật liệu tạ:</strong> Hãy chọn tạ <strong>Urethane</strong> thay vì tạ gang bọc cao su rẻ tiền. Urethane không mùi, bền và trông cực kỳ sang chảnh dưới ánh đèn.</li>
                 </ul>
             </div>
             <div class="bg-emerald-50/50 p-6 rounded-2xl border border-emerald-100 shadow-sm">
                 <h3 class="font-bold text-emerald-900 mb-2 flex items-center uppercase text-xs tracking-widest">
-                    <i class="fa-solid fa-money-bill-trend-up mr-2"></i> Chiến lược Pre-sale
+                    <i class="fa-solid fa-handshake mr-2"></i> Mẹo tiết kiệm
                 </h3>
                 <p class="text-sm text-emerald-800 leading-relaxed">
-                    Nên chạy Pre-sale trước khi khai trương 1-2 tháng. Mục tiêu thu hồi 20-30% vốn đầu tư (khoảng 600-800tr) ngay trước ngày mở cửa để giảm áp lực dòng tiền.
+                    Bạn có thể đàm phán mua gói trả góp với các đại lý lớn (như THOL, Impulse Việt Nam...) để giảm số vốn bỏ ra ban đầu, dành tiền đó cho Marketing trong 3 tháng đầu.
                 </p>
             </div>
         </div>
@@ -258,27 +311,14 @@
 
     <script>
         function switchTab(tabName) {
-            // Hide all tabs
-            document.getElementById('tab-revenue').classList.add('hidden-tab');
-            document.getElementById('tab-expense').classList.add('hidden-tab');
-            document.getElementById('tab-investment').classList.add('hidden-tab');
+            const tabs = ['revenue', 'expense', 'investment', 'equip'];
+            tabs.forEach(t => {
+                document.getElementById(`tab-${t}`).classList.add('hidden-tab');
+                document.getElementById(`btn-${t}`).classList.remove('active');
+            });
             
-            // Remove active class from buttons
-            document.getElementById('btn-revenue').classList.remove('active');
-            document.getElementById('btn-expense').classList.remove('active');
-            document.getElementById('btn-investment').classList.remove('active');
-            
-            // Show selected tab & set active button
-            if(tabName === 'revenue') {
-                document.getElementById('tab-revenue').classList.remove('hidden-tab');
-                document.getElementById('btn-revenue').classList.add('active');
-            } else if(tabName === 'expense') {
-                document.getElementById('tab-expense').classList.remove('hidden-tab');
-                document.getElementById('btn-expense').classList.add('active');
-            } else {
-                document.getElementById('tab-investment').classList.remove('hidden-tab');
-                document.getElementById('btn-investment').classList.add('active');
-            }
+            document.getElementById(`tab-${tabName}`).classList.remove('hidden-tab');
+            document.getElementById(`btn-${tabName}`).classList.add('active');
         }
     </script>
 </body>
