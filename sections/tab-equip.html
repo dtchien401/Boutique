@@ -1,17 +1,246 @@
 <div id="tab-equip" class="table-container hidden-tab">
-  <table class="w-full text-left border-collapse">
-    <thead>
-      <tr class="bg-slate-50/50 text-slate-500 text-xs uppercase font-bold tracking-widest border-b border-slate-100">
-        <th class="px-8 py-5">Nhóm máy móc thiết bị</th>
-        <th class="px-8 py-5 text-right">Ngân sách (VNĐ)</th>
-      </tr>
-    </thead>
-    <tbody class="divide-y divide-slate-50">
-      <tr><td class="px-8 py-6">Nhóm Cardio</td><td class="px-8 py-6 text-right font-bold">450.000.000</td></tr>
-      <tr><td class="px-8 py-6">Nhóm Tạ tự do</td><td class="px-8 py-6 text-right font-bold">350.000.000</td></tr>
-      <tr><td class="px-8 py-6">Nhóm Máy khối & Cable</td><td class="px-8 py-6 text-right font-bold">400.000.000</td></tr>
-      <tr><td class="px-8 py-6">Inbody & Phụ kiện</td><td class="px-8 py-6 text-right font-bold">150.000.000</td></tr>
-      <tr class="bg-blue-50"><td class="px-8 py-6 font-bold">TỔNG THIẾT BỊ</td><td class="px-8 py-6 text-right font-black text-blue-800">1.350.000.000</td></tr>
-    </tbody>
-  </table>
+  <div class="p-6 md:p-8 bg-blue-50/40 border-b border-blue-100">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div class="rounded-2xl bg-white border border-blue-100 p-5">
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Tổng nhóm thiết bị</p>
+        <div class="text-2xl font-black text-slate-900">4 nhóm</div>
+        <p class="text-sm text-slate-500 mt-1">Cardio, free weight, machine, phụ kiện</p>
+      </div>
+
+      <div class="rounded-2xl bg-white border border-blue-100 p-5">
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Tổng số máy / bộ</p>
+        <div class="text-2xl font-black text-slate-900">32</div>
+        <p class="text-sm text-slate-500 mt-1">Dự toán ban đầu</p>
+      </div>
+
+      <div class="rounded-2xl bg-white border border-blue-100 p-5">
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Mức đầu tư TB</p>
+        <div class="text-2xl font-black text-slate-900">~42M</div>
+        <p class="text-sm text-slate-500 mt-1">Bình quân / máy / bộ</p>
+      </div>
+
+      <div class="rounded-2xl bg-blue-600 text-white border border-blue-600 p-5">
+        <p class="text-xs font-bold uppercase tracking-wider text-blue-100 mb-2">Tổng đầu tư thiết bị</p>
+        <div class="text-2xl font-black">1.350.000.000</div>
+        <p class="text-sm text-blue-100 mt-1">Capex máy móc dự kiến</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="overflow-x-auto">
+    <table class="w-full text-left border-collapse">
+      <thead>
+        <tr class="bg-slate-50/50 text-slate-500 text-xs uppercase font-bold tracking-widest border-b border-slate-100">
+          <th class="px-6 py-4">Nhóm máy</th>
+          <th class="px-6 py-4">Tên máy / hạng mục</th>
+          <th class="px-6 py-4 text-right">Đơn giá (VNĐ)</th>
+          <th class="px-6 py-4 text-center">SL</th>
+          <th class="px-6 py-4 text-right">Thành tiền (VNĐ)</th>
+          <th class="px-6 py-4">Ghi chú</th>
+        </tr>
+      </thead>
+
+      <tbody class="divide-y divide-slate-50 text-sm">
+        <!-- CARDIO -->
+        <tr class="bg-slate-50">
+          <td class="px-6 py-4 font-black text-slate-900">Cardio</td>
+          <td class="px-6 py-4 font-semibold text-slate-700" colspan="5">Thiết bị tim mạch & khởi động</td>
+        </tr>
+        <tr class="hover:bg-slate-50/50 transition-colors">
+          <td class="px-6 py-4 text-slate-500">Cardio</td>
+          <td class="px-6 py-4 font-medium">Commercial Treadmill</td>
+          <td class="px-6 py-4 text-right">90.000.000</td>
+          <td class="px-6 py-4 text-center">2</td>
+          <td class="px-6 py-4 text-right font-semibold">180.000.000</td>
+          <td class="px-6 py-4 text-slate-500">Máy chạy bộ commercial</td>
+        </tr>
+        <tr class="hover:bg-slate-50/50 transition-colors">
+          <td class="px-6 py-4 text-slate-500">Cardio</td>
+          <td class="px-6 py-4 font-medium">Elliptical Trainer</td>
+          <td class="px-6 py-4 text-right">55.000.000</td>
+          <td class="px-6 py-4 text-center">2</td>
+          <td class="px-6 py-4 text-right font-semibold">110.000.000</td>
+          <td class="px-6 py-4 text-slate-500">Warm-up / low impact</td>
+        </tr>
+        <tr class="hover:bg-slate-50/50 transition-colors">
+          <td class="px-6 py-4 text-slate-500">Cardio</td>
+          <td class="px-6 py-4 font-medium">Spin Bike / Upright Bike</td>
+          <td class="px-6 py-4 text-right">20.000.000</td>
+          <td class="px-6 py-4 text-center">4</td>
+          <td class="px-6 py-4 text-right font-semibold">80.000.000</td>
+          <td class="px-6 py-4 text-slate-500">Khởi động nhanh</td>
+        </tr>
+        <tr class="hover:bg-slate-50/50 transition-colors bg-blue-50/50">
+          <td class="px-6 py-4 font-bold text-blue-800">Tổng Cardio</td>
+          <td class="px-6 py-4" colspan="3"></td>
+          <td class="px-6 py-4 text-right font-black text-blue-800">370.000.000</td>
+          <td class="px-6 py-4"></td>
+        </tr>
+
+        <!-- FREE WEIGHT -->
+        <tr class="bg-slate-50">
+          <td class="px-6 py-4 font-black text-slate-900">Free Weight</td>
+          <td class="px-6 py-4 font-semibold text-slate-700" colspan="5">Tạ tay, bench, rack cơ bản</td>
+        </tr>
+        <tr class="hover:bg-slate-50/50 transition-colors">
+          <td class="px-6 py-4 text-slate-500">Free Weight</td>
+          <td class="px-6 py-4 font-medium">Dumbbell Set + Rack</td>
+          <td class="px-6 py-4 text-right">120.000.000</td>
+          <td class="px-6 py-4 text-center">1</td>
+          <td class="px-6 py-4 text-right font-semibold">120.000.000</td>
+          <td class="px-6 py-4 text-slate-500">Tạ tay full set</td>
+        </tr>
+        <tr class="hover:bg-slate-50/50 transition-colors">
+          <td class="px-6 py-4 text-slate-500">Free Weight</td>
+          <td class="px-6 py-4 font-medium">Adjustable Bench</td>
+          <td class="px-6 py-4 text-right">12.000.000</td>
+          <td class="px-6 py-4 text-center">4</td>
+          <td class="px-6 py-4 text-right font-semibold">48.000.000</td>
+          <td class="px-6 py-4 text-slate-500">Bench đa góc</td>
+        </tr>
+        <tr class="hover:bg-slate-50/50 transition-colors">
+          <td class="px-6 py-4 text-slate-500">Free Weight</td>
+          <td class="px-6 py-4 font-medium">Half Rack / Power Rack</td>
+          <td class="px-6 py-4 text-right">35.000.000</td>
+          <td class="px-6 py-4 text-center">2</td>
+          <td class="px-6 py-4 text-right font-semibold">70.000.000</td>
+          <td class="px-6 py-4 text-slate-500">Compound lift</td>
+        </tr>
+        <tr class="hover:bg-slate-50/50 transition-colors">
+          <td class="px-6 py-4 text-slate-500">Free Weight</td>
+          <td class="px-6 py-4 font-medium">Olympic Bar + Plate Set</td>
+          <td class="px-6 py-4 text-right">28.000.000</td>
+          <td class="px-6 py-4 text-center">2</td>
+          <td class="px-6 py-4 text-right font-semibold">56.000.000</td>
+          <td class="px-6 py-4 text-slate-500">Thanh đòn + bumper plate</td>
+        </tr>
+        <tr class="hover:bg-slate-50/50 transition-colors bg-blue-50/50">
+          <td class="px-6 py-4 font-bold text-blue-800">Tổng Free Weight</td>
+          <td class="px-6 py-4" colspan="3"></td>
+          <td class="px-6 py-4 text-right font-black text-blue-800">294.000.000</td>
+          <td class="px-6 py-4"></td>
+        </tr>
+
+        <!-- MACHINE & CABLE -->
+        <tr class="bg-slate-50">
+          <td class="px-6 py-4 font-black text-slate-900">Machine & Cable</td>
+          <td class="px-6 py-4 font-semibold text-slate-700" colspan="5">Máy khối và hệ cable</td>
+        </tr>
+        <tr class="hover:bg-slate-50/50 transition-colors">
+          <td class="px-6 py-4 text-slate-500">Machine</td>
+          <td class="px-6 py-4 font-medium">Functional Trainer Dual Cable</td>
+          <td class="px-6 py-4 text-right">85.000.000</td>
+          <td class="px-6 py-4 text-center">2</td>
+          <td class="px-6 py-4 text-right font-semibold">170.000.000</td>
+          <td class="px-6 py-4 text-slate-500">PT studio core machine</td>
+        </tr>
+        <tr class="hover:bg-slate-50/50 transition-colors">
+          <td class="px-6 py-4 text-slate-500">Machine</td>
+          <td class="px-6 py-4 font-medium">Leg Press / Hack Squat Combo</td>
+          <td class="px-6 py-4 text-right">75.000.000</td>
+          <td class="px-6 py-4 text-center">1</td>
+          <td class="px-6 py-4 text-right font-semibold">75.000.000</td>
+          <td class="px-6 py-4 text-slate-500">Lower body strength</td>
+        </tr>
+        <tr class="hover:bg-slate-50/50 transition-colors">
+          <td class="px-6 py-4 text-slate-500">Machine</td>
+          <td class="px-6 py-4 font-medium">Lat Pulldown / Low Row</td>
+          <td class="px-6 py-4 text-right">55.000.000</td>
+          <td class="px-6 py-4 text-center">2</td>
+          <td class="px-6 py-4 text-right font-semibold">110.000.000</td>
+          <td class="px-6 py-4 text-slate-500">Back training</td>
+        </tr>
+        <tr class="hover:bg-slate-50/50 transition-colors">
+          <td class="px-6 py-4 text-slate-500">Machine</td>
+          <td class="px-6 py-4 font-medium">Chest Press / Shoulder Press</td>
+          <td class="px-6 py-4 text-right">50.000.000</td>
+          <td class="px-6 py-4 text-center">2</td>
+          <td class="px-6 py-4 text-right font-semibold">100.000.000</td>
+          <td class="px-6 py-4 text-slate-500">Upper body strength</td>
+        </tr>
+        <tr class="hover:bg-slate-50/50 transition-colors bg-blue-50/50">
+          <td class="px-6 py-4 font-bold text-blue-800">Tổng Machine & Cable</td>
+          <td class="px-6 py-4" colspan="3"></td>
+          <td class="px-6 py-4 text-right font-black text-blue-800">455.000.000</td>
+          <td class="px-6 py-4"></td>
+        </tr>
+
+        <!-- ACCESSORIES -->
+        <tr class="bg-slate-50">
+          <td class="px-6 py-4 font-black text-slate-900">Assessment & Accessories</td>
+          <td class="px-6 py-4 font-semibold text-slate-700" colspan="5">Đánh giá cơ thể và phụ kiện tập luyện</td>
+        </tr>
+        <tr class="hover:bg-slate-50/50 transition-colors">
+          <td class="px-6 py-4 text-slate-500">Accessory</td>
+          <td class="px-6 py-4 font-medium">InBody Machine</td>
+          <td class="px-6 py-4 text-right">120.000.000</td>
+          <td class="px-6 py-4 text-center">1</td>
+          <td class="px-6 py-4 text-right font-semibold">120.000.000</td>
+          <td class="px-6 py-4 text-slate-500">Assessment khách hàng</td>
+        </tr>
+        <tr class="hover:bg-slate-50/50 transition-colors">
+          <td class="px-6 py-4 text-slate-500">Accessory</td>
+          <td class="px-6 py-4 font-medium">Kettlebell / Bands / Box / BOSU / Med Ball</td>
+          <td class="px-6 py-4 text-right">45.000.000</td>
+          <td class="px-6 py-4 text-center">1 bộ</td>
+          <td class="px-6 py-4 text-right font-semibold">45.000.000</td>
+          <td class="px-6 py-4 text-slate-500">Functional training kit</td>
+        </tr>
+        <tr class="hover:bg-slate-50/50 transition-colors">
+          <td class="px-6 py-4 text-slate-500">Accessory</td>
+          <td class="px-6 py-4 font-medium">Stretching / Mobility Area Setup</td>
+          <td class="px-6 py-4 text-right">30.000.000</td>
+          <td class="px-6 py-4 text-center">1</td>
+          <td class="px-6 py-4 text-right font-semibold">30.000.000</td>
+          <td class="px-6 py-4 text-slate-500">Mat, foam roller, rack</td>
+        </tr>
+        <tr class="hover:bg-slate-50/50 transition-colors bg-blue-50/50">
+          <td class="px-6 py-4 font-bold text-blue-800">Tổng Assessment & Accessories</td>
+          <td class="px-6 py-4" colspan="3"></td>
+          <td class="px-6 py-4 text-right font-black text-blue-800">195.000.000</td>
+          <td class="px-6 py-4"></td>
+        </tr>
+
+        <!-- GRAND TOTAL -->
+        <tr class="bg-slate-900 text-white">
+          <td class="px-6 py-5 font-black text-lg">TỔNG THIẾT BỊ</td>
+          <td class="px-6 py-5" colspan="3"></td>
+          <td class="px-6 py-5 text-right font-black text-2xl">1.314.000.000</td>
+          <td class="px-6 py-5 text-slate-300">Chưa gồm buffer phát sinh</td>
+        </tr>
+
+        <tr class="bg-emerald-50">
+          <td class="px-6 py-5 font-bold text-emerald-900">Buffer / dự phòng mua sắm</td>
+          <td class="px-6 py-5" colspan="3"></td>
+          <td class="px-6 py-5 text-right font-bold text-emerald-900">36.000.000</td>
+          <td class="px-6 py-5 text-emerald-700">~2.7% tổng capex thiết bị</td>
+        </tr>
+
+        <tr class="bg-blue-600 text-white">
+          <td class="px-6 py-6 font-black text-xl">TỔNG ĐẦU TƯ MÁY MÓC</td>
+          <td class="px-6 py-6" colspan="3"></td>
+          <td class="px-6 py-6 text-right font-black text-3xl">1.350.000.000</td>
+          <td class="px-6 py-6 text-blue-100">Theo kế hoạch đầu tư ban đầu</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="p-6 md:p-8 border-t border-slate-100 bg-white">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+        <h4 class="font-black text-slate-900 mb-3">Nguyên tắc đầu tư thiết bị</h4>
+        <p class="text-sm leading-relaxed text-slate-700">
+          Thiết bị được chia theo nhóm công năng để dễ kiểm soát capex, ưu tiên những hạng mục phục vụ trực tiếp cho PT productivity, client experience và khả năng scale công suất của studio.
+        </p>
+      </div>
+
+      <div class="rounded-2xl border border-blue-200 bg-blue-50 p-6">
+        <h4 class="font-black text-blue-900 mb-3">Cách dùng tab này</h4>
+        <p class="text-sm leading-relaxed text-blue-800">
+          Bạn có thể update trực tiếp từng dòng theo tên máy thực tế, model, đơn giá vendor, số lượng cần mua và ghi chú tình trạng như: đã chốt, đang báo giá, cần BOD duyệt hoặc hold.
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
