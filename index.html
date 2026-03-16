@@ -7,177 +7,230 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
-        .gradient-card { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); }
-        .month-row:hover { background-color: #f1f5f9; transition: all 0.2s; }
-        .sticky-header { position: sticky; top: 0; z-index: 10; background: white; border-bottom: 2px solid #e2e8f0; }
-        .highlight-box { border-left: 4px solid #3b82f6; background-color: #eff6ff; }
-        .revenue-cell { color: #059669; font-weight: 600; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #f8fafc; 
+            color: #1e293b;
+        }
+        .stat-card {
+            background: white;
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border: 1px solid #f1f5f9;
+        }
+        .stat-card-dark {
+            background: #0f172a;
+            color: white;
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .table-container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border: 1px solid #f1f5f9;
+            overflow: hidden;
+        }
+        .tab-btn {
+            transition: all 0.2s;
+            border-bottom: 2px solid transparent;
+        }
+        .tab-btn.active {
+            color: #2563eb;
+            border-bottom-color: #2563eb;
+            background-color: #eff6ff;
+        }
+        .hidden-tab {
+            display: none;
+        }
     </style>
 </head>
-<body class="p-4 md:p-8 text-slate-900">
-    <div class="max-w-6xl mx-auto">
-        <!-- Header -->
-        <header class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
+<body class="p-4 md:p-12">
+    <div class="max-w-7xl mx-auto">
+        <!-- Top Header Section -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10">
             <div>
-                <h1 class="text-3xl font-bold text-slate-900">Chiến Lược & Tài Chính PT Center</h1>
-                <p class="text-slate-500 mt-1">Quy mô: 300m² | 50 PT | Lộ trình tăng trưởng thực tế (Tháng 1: 15-25 khách)</p>
+                <h1 class="text-4xl font-extrabold tracking-tight text-slate-900">PT Center Dashboard</h1>
+                <p class="text-slate-500 mt-2 text-lg">Phân tích Tài chính & Vận hành | Lợi nhuận mục tiêu 800tr</p>
             </div>
-            <div class="flex flex-wrap gap-3 text-sm">
-                <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-semibold">
-                    <i class="fa-solid fa-money-bill-wave mr-2"></i>800k / Session
-                </span>
-                <span class="bg-slate-800 text-white px-4 py-2 rounded-full font-semibold">
-                    <i class="fa-solid fa-users mr-2"></i>Target 500 Khách
-                </span>
-            </div>
-        </header>
-
-        <!-- Financial & Logic Breakdown -->
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-10">
-            <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200">
-                <h4 class="font-bold text-slate-400 text-xs uppercase mb-2">Giá mỗi buổi (Session)</h4>
-                <div class="text-xl font-bold text-slate-800">800.000 đ</div>
-                <p class="text-xs text-slate-500 mt-1">Dịch vụ 1-on-1 cao cấp</p>
-            </div>
-            <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200">
-                <h4 class="font-bold text-slate-400 text-xs uppercase mb-2">Số buổi / Khách / Tháng</h4>
-                <div class="text-xl font-bold text-slate-800">12 Buổi</div>
-                <p class="text-xs text-slate-500 mt-1">~3 buổi/tuần (3-2-2)</p>
-            </div>
-            <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200">
-                <h4 class="font-bold text-slate-400 text-xs uppercase mb-2">Doanh thu / Khách</h4>
-                <div class="text-xl font-bold text-blue-600">9.600.000 đ</div>
-                <p class="text-xs text-slate-500 mt-1">Mức đóng góp hàng tháng</p>
-            </div>
-            <div class="gradient-card p-5 rounded-2xl shadow-xl text-white">
-                <h4 class="font-bold text-slate-400 text-xs uppercase mb-2">Doanh thu mục tiêu</h4>
-                <div class="text-xl font-bold text-green-400">4,8 Tỷ / Tháng</div>
-                <p class="text-xs text-slate-400 mt-1">Khi đạt 500 khách active</p>
-            </div>
-        </div>
-
-        <!-- Main Growth & Revenue Table -->
-        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden mb-10">
-            <div class="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
-                <h2 class="text-xl font-bold text-slate-800">Lộ trình Nhân sự & Doanh thu 12 Tháng</h2>
-                <div class="text-xs text-slate-500 italic">* Ước tính Tháng 1: 3-5 khách/PT</div>
-            </div>
-            <div class="overflow-x-auto">
-                <table class="w-full text-left border-collapse">
-                    <thead>
-                        <tr class="sticky-header text-slate-500 text-xs uppercase tracking-wider">
-                            <th class="px-6 py-4 font-semibold">Tháng</th>
-                            <th class="px-6 py-4 font-semibold text-center">Số PT</th>
-                            <th class="px-6 py-4 font-semibold text-center">Tổng Khách</th>
-                            <th class="px-6 py-4 font-semibold text-center">Khách/Ngày</th>
-                            <th class="px-6 py-4 font-semibold text-right">Doanh thu (VNĐ)</th>
-                            <th class="px-6 py-4 font-semibold">Chiến lược vận hành</th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-slate-700 divide-y divide-slate-100">
-                        <tr class="month-row bg-orange-50/30">
-                            <td class="px-6 py-4 font-bold text-orange-600">Tháng 01</td>
-                            <td class="px-6 py-4 text-center font-bold">5</td>
-                            <td class="px-6 py-4 text-center">15 - 25</td>
-                            <td class="px-6 py-4 text-center">8 - 12</td>
-                            <td class="px-6 py-4 text-right revenue-cell">~192.000.000</td>
-                            <td class="px-6 py-4 text-xs text-slate-500 italic">Giai đoạn "Hạt giống". Ưu tiên chất lượng buổi dạy 100%.</td>
-                        </tr>
-                        <tr class="month-row bg-blue-50/20">
-                            <td class="px-6 py-4 font-bold text-blue-600">Tháng 02</td>
-                            <td class="px-6 py-4 text-center font-bold">8</td>
-                            <td class="px-6 py-4 text-center">50</td>
-                            <td class="px-6 py-4 text-center">25</td>
-                            <td class="px-6 py-4 text-right revenue-cell">480.000.000</td>
-                            <td class="px-6 py-4 text-xs text-slate-500 italic font-medium">Bùng nổ nhờ Referral & Ads bắt đầu hiệu quả. Tuyển thêm 3 PT.</td>
-                        </tr>
-                        <tr class="month-row">
-                            <td class="px-6 py-4 font-bold text-green-600">Tháng 03</td>
-                            <td class="px-6 py-4 text-center font-semibold">12</td>
-                            <td class="px-6 py-4 text-center font-semibold">100</td>
-                            <td class="px-6 py-4 text-center text-sm">50</td>
-                            <td class="px-6 py-4 text-right revenue-cell">960.000.000</td>
-                            <td class="px-6 py-4 text-xs text-slate-500 italic">Đạt điểm hòa vốn. Quy trình Sales & Marketing đi vào quỹ đạo ổn định.</td>
-                        </tr>
-                        <tr class="month-row">
-                            <td class="px-6 py-4 font-bold text-blue-600">Tháng 06</td>
-                            <td class="px-6 py-4 text-center font-semibold">25</td>
-                            <td class="px-6 py-4 text-center font-semibold">250</td>
-                            <td class="px-6 py-4 text-center text-sm">125</td>
-                            <td class="px-6 py-4 text-right revenue-cell font-bold text-emerald-700">2.400.000.000</td>
-                            <td class="px-6 py-4 text-xs text-slate-500 italic">Mở rộng nhân sự. Đào tạo Leader quản lý nhóm 5 PT.</td>
-                        </tr>
-                        <tr class="month-row">
-                            <td class="px-6 py-4 font-bold text-blue-600">Tháng 09</td>
-                            <td class="px-6 py-4 text-center font-semibold">40</td>
-                            <td class="px-6 py-4 text-center font-semibold">400</td>
-                            <td class="px-6 py-4 text-center text-sm">200</td>
-                            <td class="px-6 py-4 text-right revenue-cell">3.840.000.000</td>
-                            <td class="px-6 py-4 text-xs text-slate-500 italic">Tối ưu công suất sàn 300m2. Chú trọng Retention (Gia hạn).</td>
-                        </tr>
-                        <tr class="month-row bg-slate-900 text-white">
-                            <td class="px-6 py-4 font-bold text-blue-400">Tháng 12</td>
-                            <td class="px-6 py-4 text-center font-semibold">50</td>
-                            <td class="px-6 py-4 text-center font-semibold">500</td>
-                            <td class="px-6 py-4 text-center text-sm">250</td>
-                            <td class="px-6 py-4 text-right text-green-400 font-bold">4.800.000.000</td>
-                            <td class="px-6 py-4 text-xs text-slate-400 italic font-medium">Full công suất máy móc và nhân sự.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- Strategy Sections -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-            <!-- Why 50 customers in Month 2? -->
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-                <h3 class="text-xl font-bold text-slate-800 mb-6 flex items-center">
-                    <i class="fa-solid fa-chart-line text-blue-500 mr-3"></i>Tại sao đạt 50 khách ở Tháng 2?
-                </h3>
-                <div class="space-y-4">
-                    <div class="p-4 rounded-xl border border-blue-100 bg-blue-50/50">
-                        <p class="font-bold text-blue-900 text-sm">1. Sức mạnh lời giới thiệu (Referral)</p>
-                        <p class="text-xs text-blue-700 mt-1">20 khách hài lòng từ tháng 1 sẽ mang về ít nhất 10-15 khách mới qua truyền miệng.</p>
-                    </div>
-                    <div class="p-4 rounded-xl border border-slate-100">
-                        <p class="font-bold text-slate-800 text-sm">2. Marketing bắt đầu "ngấm"</p>
-                        <p class="text-xs text-slate-500 mt-1">Các chiến dịch chạy từ tháng 1 bắt đầu chuyển đổi mạnh hơn sau khi khách hàng đã thấy thương hiệu đủ nhiều.</p>
-                    </div>
-                    <div class="p-4 rounded-xl border border-slate-100">
-                        <p class="font-bold text-slate-800 text-sm">3. Mở rộng đội ngũ PT</p>
-                        <p class="text-xs text-slate-500 mt-1">Tuyển thêm 3 PT giúp tăng khả năng tiếp cận các tệp khách cá nhân của từng nhân sự mới.</p>
-                    </div>
+            <div class="flex gap-3 mt-4 md:mt-0">
+                <div class="bg-blue-50 text-blue-600 px-4 py-2 rounded-xl font-bold flex items-center border border-blue-100">
+                    <i class="fa-solid fa-chart-pie mr-2"></i> LN 16.7%
                 </div>
-            </div>
-
-            <!-- Team Growth -->
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-                <h3 class="text-xl font-bold text-slate-800 mb-6 flex items-center">
-                    <i class="fa-solid fa-users-gear text-indigo-500 mr-3"></i>Chiến lược nhân sự bền vững
-                </h3>
-                <div class="space-y-4 text-sm text-slate-600">
-                    <div class="flex items-start">
-                        <i class="fa-solid fa-circle-check text-green-500 mt-1 mr-3"></i>
-                        <span><strong>Tải trọng an toàn:</strong> Tháng đầu PT chỉ làm ~30% công suất để tập trung hỗ trợ quản lý sàn và khảo sát khách hàng.</span>
-                    </div>
-                    <div class="flex items-start">
-                        <i class="fa-solid fa-circle-check text-green-500 mt-1 mr-3"></i>
-                        <span><strong>Tuyển dụng theo nhu cầu:</strong> Chỉ tuyển thêm PT (Tháng 2 lên 8 người) khi lượng khách vượt quá khả năng phục vụ chất lượng cao của 5 người cũ.</span>
-                    </div>
-                    <div class="flex items-start">
-                        <i class="fa-solid fa-circle-check text-green-500 mt-1 mr-3"></i>
-                        <span><strong>Văn hóa nòng cốt:</strong> 5 PT đầu tiên phải được thấm nhuần tư duy phục vụ khách hàng thượng lưu trước khi họ dẫn dắt các nhân sự mới.</span>
-                    </div>
+                <div class="bg-slate-900 text-white px-4 py-2 rounded-xl font-bold flex items-center shadow-lg">
+                    <i class="fa-solid fa-building mr-2"></i> 300m² Floor
                 </div>
             </div>
         </div>
 
-        <footer class="text-center pb-10 text-slate-400 text-xs">
-            Dữ liệu được điều chỉnh theo thực tế khởi đầu khiêm tốn: 3-5 khách/PT trong tháng đầu tiên.
-        </footer>
+        <!-- Metrics Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
+            <div class="stat-card">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Đơn giá / Buổi</p>
+                <div class="text-2xl font-black text-slate-800">800.000 đ</div>
+                <p class="text-sm text-slate-500 mt-1">Dịch vụ 1-on-1 VIP</p>
+            </div>
+            <div class="stat-card">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Khách / PT tối ưu</p>
+                <div class="text-2xl font-black text-slate-800">10 Khách</div>
+                <p class="text-sm text-slate-500 mt-1">12 buổi / khách / tháng</p>
+            </div>
+            <div class="stat-card">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Tổng Chi phí / Tháng</p>
+                <div class="text-2xl font-black text-red-500">4.0 Tỷ</div>
+                <p class="text-sm text-slate-500 mt-1">Dự toán khi full tải</p>
+            </div>
+            <div class="stat-card-dark">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">LN ròng kỳ vọng</p>
+                <div class="text-2xl font-black text-emerald-400">800 Tr / Tháng</div>
+                <p class="text-sm text-slate-300 mt-1">Sau khi trừ mọi chi phí</p>
+            </div>
+        </div>
+
+        <!-- Tabs Navigation -->
+        <div class="flex border-b border-slate-200 mb-6 bg-white rounded-t-xl overflow-hidden shadow-sm">
+            <button onclick="switchTab('revenue')" id="btn-revenue" class="tab-btn active px-8 py-4 font-bold text-sm uppercase tracking-wider flex items-center">
+                <i class="fa-solid fa-calendar-days mr-2"></i> Lộ trình Doanh thu
+            </button>
+            <button onclick="switchTab('expense')" id="btn-expense" class="tab-btn px-8 py-4 font-bold text-sm uppercase tracking-wider flex items-center">
+                <i class="fa-solid fa-file-invoice-dollar mr-2"></i> Chi phí vận hành
+            </button>
+        </div>
+
+        <!-- Tab 1: Revenue Plan -->
+        <div id="tab-revenue" class="table-container">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-slate-50/50 text-slate-500 text-xs uppercase font-bold tracking-widest border-b border-slate-100">
+                        <th class="px-8 py-5">Tháng</th>
+                        <th class="px-8 py-5 text-center">Số PT</th>
+                        <th class="px-8 py-5 text-center">Tổng Khách</th>
+                        <th class="px-8 py-5 text-right">Doanh thu</th>
+                        <th class="px-8 py-5 text-right text-orange-600">Lợi nhuận dự toán</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-50">
+                    <tr class="hover:bg-slate-50/50 transition-colors">
+                        <td class="px-8 py-6 font-bold text-blue-600">Tháng 01</td>
+                        <td class="px-8 py-6 text-center font-semibold">5</td>
+                        <td class="px-8 py-6 text-center font-semibold">15 - 25</td>
+                        <td class="px-8 py-6 text-right font-medium">~192.000.000</td>
+                        <td class="px-8 py-6 text-right text-red-500 font-bold">-(250.000.000)</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50 transition-colors">
+                        <td class="px-8 py-6 font-bold text-blue-600">Tháng 03</td>
+                        <td class="px-8 py-6 text-center font-semibold">12</td>
+                        <td class="px-8 py-6 text-center font-semibold">120</td>
+                        <td class="px-8 py-6 text-right font-medium">1.152.000.000</td>
+                        <td class="px-8 py-6 text-right text-blue-500 font-bold">~20.000.000</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50 transition-colors">
+                        <td class="px-8 py-6 font-bold text-blue-600">Tháng 06</td>
+                        <td class="px-8 py-6 text-center font-semibold">25</td>
+                        <td class="px-8 py-6 text-center font-semibold">250</td>
+                        <td class="px-8 py-6 text-right font-medium">2.400.000.000</td>
+                        <td class="px-8 py-6 text-right text-emerald-600 font-bold">350.000.000</td>
+                    </tr>
+                    <tr class="bg-slate-900 text-white">
+                        <td class="px-8 py-6 font-bold text-blue-400">Tháng 12</td>
+                        <td class="px-8 py-6 text-center font-bold">50</td>
+                        <td class="px-8 py-6 text-center font-bold">500</td>
+                        <td class="px-8 py-6 text-right font-bold">4.800.000.000</td>
+                        <td class="px-8 py-6 text-right text-emerald-400 font-black text-xl">800.000.000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tab 2: Expense Distribution -->
+        <div id="tab-expense" class="table-container hidden-tab">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-slate-50/50 text-slate-500 text-xs uppercase font-bold tracking-widest border-b border-slate-100">
+                        <th class="px-8 py-5">Hạng mục chi phí</th>
+                        <th class="px-8 py-5 text-center">Tỷ lệ %</th>
+                        <th class="px-8 py-5 text-right">Số tiền (VNĐ)</th>
+                        <th class="px-8 py-5">Ghi chú vận hành</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-50">
+                    <tr class="hover:bg-slate-50/50 transition-colors">
+                        <td class="px-8 py-6 font-bold">Lương PT (Cứng + Dạy)</td>
+                        <td class="px-8 py-6 text-center font-semibold text-blue-600">45%</td>
+                        <td class="px-8 py-6 text-right font-bold">2.160.000.000</td>
+                        <td class="px-8 py-6 text-sm text-slate-500">Quỹ lương lớn nhất, cần cơ chế bậc thang.</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50 transition-colors">
+                        <td class="px-8 py-6 font-bold">Mặt bằng (300m²)</td>
+                        <td class="px-8 py-6 text-center font-semibold text-blue-600">6.2%</td>
+                        <td class="px-8 py-6 text-right font-bold">300.000.000</td>
+                        <td class="px-8 py-6 text-sm text-slate-500">Ước tính 1tr/m² cho vị trí đắc địa.</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50 transition-colors">
+                        <td class="px-8 py-6 font-bold">Marketing & Branding</td>
+                        <td class="px-8 py-6 text-center font-semibold text-blue-600">8%</td>
+                        <td class="px-8 py-6 text-right font-bold">384.000.000</td>
+                        <td class="px-8 py-6 text-sm text-slate-500">Ads, Content, KOLs và sự kiện khách hàng.</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50 transition-colors">
+                        <td class="px-8 py-6 font-bold">Lương QL, Sales & Lễ tân</td>
+                        <td class="px-8 py-6 text-center font-semibold text-blue-600">10%</td>
+                        <td class="px-8 py-6 text-right font-bold">480.000.000</td>
+                        <td class="px-8 py-6 text-sm text-slate-500">Đội ngũ hỗ trợ vận hành 5 sao.</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50 transition-colors">
+                        <td class="px-8 py-6 font-bold text-slate-500">Điện nước & Khấu hao</td>
+                        <td class="px-8 py-6 text-center font-semibold text-blue-600">14.3%</td>
+                        <td class="px-8 py-6 text-right font-bold">676.000.000</td>
+                        <td class="px-8 py-6 text-sm text-slate-500">Dự phòng tái đầu tư máy móc định kỳ.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Strategy Footer -->
+        <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-blue-50/50 p-6 rounded-2xl border border-blue-100 shadow-sm">
+                <h3 class="font-bold text-blue-900 mb-2 flex items-center uppercase text-xs tracking-widest">
+                    <i class="fa-solid fa-triangle-exclamation mr-2"></i> Rủi ro tài chính
+                </h3>
+                <p class="text-sm text-blue-800 leading-relaxed">
+                    Nếu tỷ lệ gia hạn khách (Retention) thấp hơn 60%, chi phí Marketing sẽ phải tăng gấp đôi để bù khách, trực tiếp triệt tiêu lợi nhuận 800tr.
+                </p>
+            </div>
+            <div class="bg-emerald-50/50 p-6 rounded-2xl border border-emerald-100 shadow-sm">
+                <h3 class="font-bold text-emerald-900 mb-2 flex items-center uppercase text-xs tracking-widest">
+                    <i class="fa-solid fa-lightbulb mr-2"></i> Tối ưu hóa
+                </h3>
+                <p class="text-sm text-emerald-800 leading-relaxed">
+                    Tập trung vào các gói tập dài hạn (6-12 tháng) để dòng tiền mặt (Cashflow) về mạnh trong những tháng đầu, giảm áp lực bù lỗ.
+                </p>
+            </div>
+        </div>
     </div>
+
+    <script>
+        function switchTab(tabName) {
+            // Hide all tabs
+            document.getElementById('tab-revenue').classList.add('hidden-tab');
+            document.getElementById('tab-expense').classList.add('hidden-tab');
+            
+            // Remove active class from buttons
+            document.getElementById('btn-revenue').classList.remove('active');
+            document.getElementById('btn-expense').classList.remove('active');
+            
+            // Show selected tab & set active button
+            if(tabName === 'revenue') {
+                document.getElementById('tab-revenue').classList.remove('hidden-tab');
+                document.getElementById('btn-revenue').classList.add('active');
+            } else {
+                document.getElementById('tab-expense').classList.remove('hidden-tab');
+                document.getElementById('btn-expense').classList.add('active');
+            }
+        }
+    </script>
 </body>
 </html>
